@@ -11,7 +11,7 @@
     <properties>
         <out.folder>6210402488</out.folder>
         <out.filename>6210402488-jar</out.filename>
-        <project.mainClass>sample.Main</project.mainClass>
+        <project.mainClass>Initial</project.mainClass>
     </properties>
 
     <dependencies>
