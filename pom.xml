@@ -4,14 +4,14 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>sample</groupId>
+    <groupId>packman</groupId>
     <artifactId>PackMan</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <properties>
         <out.folder>6210402488</out.folder>
         <out.filename>6210402488-jar</out.filename>
-        <project.mainClass>Initial</project.mainClass>
+        <project.mainClass>packman.Initial</project.mainClass>
     </properties>
 
     <dependencies>
