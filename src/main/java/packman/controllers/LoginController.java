@@ -7,9 +7,9 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 
 public class LoginController {
-    @FXML TextField userField;
-    @FXML PasswordField passwordField;
-    @FXML Button loginButton;
+    @FXML private TextField userField;
+    @FXML private PasswordField passwordField;
+    @FXML private Button loginButton;
 
 //    @FXML public void initialize() { }
 
