@@ -1,58 +1,55 @@
 package packman.models.mails;
 
-import packman.models.mails.information.Size;
-import packman.models.mails.information.TimeStamp;
-import packman.models.people.information.Address;
-import packman.models.people.information.Name;
-import packman.models.people.information.Receiver;
-import packman.models.people.information.Sender;
-import packman.models.residences.Room;
+import javafx.scene.image.Image;
+import packman.models.account.details.Name;
+import packman.models.account.details.Picture;
+import packman.models.mails.details.MailType;
+import packman.models.mails.details.Size;
+import packman.models.mails.details.TimeStamp;
 
 public class Mail {
-    private Receiver  receiver;
-    private Sender    sender;
-    private Size      size;
+    private MailType mailType;
+    private Picture picture;
+    private Name   receiverName;
+    private String receiverRoom;
+    private Name   senderName;
+    private Size   size;
     private TimeStamp receivingStamp;
     private TimeStamp sendingStamp;
 
     /* Constructor */
-    public Mail(Receiver receiver, Sender sender, Size size, TimeStamp receivingStamp, TimeStamp sendingStamp) {
-        this.receiver       = receiver;
-        this.sender         = sender;
+    public Mail(MailType mailType, Picture picture, Name receiverName, String receiverRoom, Name senderName, Size size, TimeStamp receivingStamp, TimeStamp sendingStamp) {
+        this.mailType       = mailType;
+        this.picture        = picture;
+        this.receiverName   = receiverName;
+        this.receiverRoom   = receiverRoom;
+        this.senderName     = senderName;
         this.size           = size;
         this.receivingStamp = receivingStamp;
         this.sendingStamp   = sendingStamp;
     }
-    public Mail(Receiver receiver, Sender sender, Size size, TimeStamp receivingStamp) {
-        this(receiver, sender, size, receivingStamp, null);
-    }
-    // public Mail(Receiver receiver, Sender sender, Size size) {
-    //     this(receiver, sender, size, null);
-    // }
 
     /* Setter */
-    public void setReceiver(Receiver receiver) { this.receiver = receiver; }
-    public void setSender(Sender sender) { this.sender = sender; }
+    public void setMailType(MailType mailType) { this.mailType = mailType; }
+    public void setPicture(Picture picture) { this.picture = picture; }
+    public void setReceiverName(Name receiverName) { this.receiverName = receiverName; }
+    public void setReceiverRoom(String receiverRoom) { this.receiverRoom = receiverRoom; }
+    public void setSenderName(Name senderName) { this.senderName = senderName; }
     public void setSize(Size size) { this.size = size; }
-    public void setReceiving(TimeStamp receiving) { this.receivingStamp = receiving; }
+    public void setReceivingStamp(TimeStamp receivingStamp) { this.receivingStamp = receivingStamp; }
     public void setSendingStamp(TimeStamp sendingStamp) { this.sendingStamp = sendingStamp; }
 
     /* Getter */
-    public Receiver getReceiver() { return receiver; }
-    public Sender getSender() { return sender; }
+    public MailType getMailType() { return mailType; }
+    public Picture getPicture() { return picture; }
+    public Name getReceiverName() { return receiverName; }
+    public String getReceiverRoom() { return receiverRoom; }
+    public Name getSenderName() { return senderName; }
     public Size getSize() { return size; }
     public TimeStamp getReceivingStamp() { return receivingStamp; }
     public TimeStamp getSendingStamp() { return sendingStamp; }
 
-    public Name getReceiverName() { return receiver.getReceiver().getName(); }
-    public Room getReceiverRoom() { return receiver.getReceiver().getResidence(); }
-    public Name getSenderName() { return sender.getSenderName(); }
-    public Address getSenderAddress() { return sender.getSenderAddress(); }
+    public Image getImage() { return picture.getImage(); }
+    public String getImagePath() { return picture.getPath(); }
     public Double getVolume() { return size.getVolume(); }
-
-    public void received(TimeStamp sendingStamp) { this.sendingStamp = sendingStamp; }
-
-    public boolean isReceived() { return sendingStamp != null; }
-
-    public String getMailType() { return "Mail"; }
 }
