@@ -1,16 +1,18 @@
 package packman.services.roomDataBase;
 
-import packman.models.building.Room;
-import packman.models.building.RoomList;
-import packman.models.building.details.RoomType;
+import packman.models.buildings.RoomList;
+import packman.models.buildings.subtypes.DuplexRoom;
+import packman.models.buildings.subtypes.StudioRoom;
+import packman.models.buildings.subtypes.SuiteRoom;
 
 public class RoomHardcodeDataSource implements RoomDataSource {
 
     @Override
     public RoomList getRoomsData() {
         RoomList rooms = new RoomList();
-        rooms.add(new Room(RoomType.STUDIO, "123", "7", "A"));
-        rooms.add(new Room(RoomType.DUPLEX, "567", "2", "A"));
+        rooms.add(new StudioRoom("B", "5", "06"));
+        rooms.add(new SuiteRoom( "B", "2", "11"));
+        rooms.add(new DuplexRoom("A", "7", "09"));
         return rooms;
     }
 

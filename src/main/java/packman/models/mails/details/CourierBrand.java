@@ -1,6 +1,9 @@
 package packman.models.mails.details;
 
 public enum CourierBrand {
+    THAILANDPOST,
     KERRY,
-    THAILANDPOST
+    FEDEX,
+    DHL,
+    OTHERS
 }

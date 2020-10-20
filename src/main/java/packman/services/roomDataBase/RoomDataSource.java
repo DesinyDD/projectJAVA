@@ -1,6 +1,6 @@
 package packman.services.roomDataBase;
 
-import packman.models.building.RoomList;
+import packman.models.buildings.RoomList;
 
 public interface RoomDataSource {
     RoomList getRoomsData();

@@ -5,14 +5,16 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
-import packman.controllers.ResidentMailboxController;
-import packman.models.account.Account;
-import packman.models.account.AccountList;
-import packman.models.account.details.AccountType;
-import packman.models.building.RoomList;
+import packman.controllers.administratorMenu.AdministratorController;
+import packman.controllers.residentMenu.ResidentMailboxController;
+import packman.models.accounts.Account;
+import packman.models.accounts.AccountList;
+import packman.models.buildings.RoomList;
 import packman.models.mails.MailList;
 import packman.services.accountDataBase.AccountDataSource;
 import packman.services.accountDataBase.AccountFileDataSource;
@@ -20,11 +22,13 @@ import packman.services.accountDataBase.AccountHardcodeDataSource;
 import packman.services.mailDataBase.MailDataSource;
 import packman.services.mailDataBase.MailHardcodeDataSource;
 import packman.services.roomDataBase.RoomDataSource;
+import packman.services.roomDataBase.RoomFileDataSource;
 import packman.services.roomDataBase.RoomHardcodeDataSource;
 
 import java.io.IOException;
 
 public class LoginController {
+    private String theme;
     private AccountList accounts;
     private AccountDataSource accountDataSource;
     private RoomList rooms;
@@ -32,7 +36,6 @@ public class LoginController {
     private MailList mails;
     private MailDataSource mailDataSource;
     private Account currentAccount;
-    private String theme;
 
     /* Setter */
     public void setTheme(String theme) { this.theme = theme; }
@@ -50,42 +53,64 @@ public class LoginController {
     @FXML private Button devInfoButton;
     @FXML private Button helpButton;
     @FXML private Button themeButton;
+    @FXML private ImageView themeIcon;
+    @FXML private Label errorAlert;
 
     @FXML public void initialize() {
         this.accountDataSource = new AccountFileDataSource("data", "accounts.csv"); // new AccountHardcodeDataSource();
-        this.accounts = accountDataSource.getAccountsData();
-        this.roomDataSource = new RoomHardcodeDataSource(); // new RoomFileDataSource("data", "rooms.csv");
-        this.rooms = roomDataSource.getRoomsData();
-        this.mailDataSource = new MailHardcodeDataSource(); // new MailFileDataSource("data", "mails.csv");
-        this.mails = mailDataSource.getMailsData();
-        this.theme = "/stylesheets/lightTheme.css";
+        this.accounts          = accountDataSource.getAccountsData();
+        this.roomDataSource    = new RoomFileDataSource("data", "rooms.csv"); // new RoomHardcodeDataSource();
+        this.rooms             = roomDataSource.getRoomsData();
+        this.mailDataSource    = new MailHardcodeDataSource(); // new MailFileDataSource("data", "mails.csv");
+        this.mails             = mailDataSource.getMailsData();
+        this.theme             = "/stylesheets/lightTheme.css";
     }
 
     /* Login to PackMan */
-    @FXML public void handleLoginButtonOnAction(ActionEvent event) throws IOException {
-        if (accounts.login(usernameField.getText(), passwordField.getText())) {
-            currentAccount = accounts.findByUsername(usernameField.getText());
-            accounts.remove(currentAccount);
-            currentAccount.setLastLogin();
-            accounts.add(currentAccount);
+    @FXML public void handleLoginButtonOnAction(ActionEvent event) {
+        try {
+            currentAccount = accounts.login(usernameField.getText(), passwordField.getText());
             accountDataSource.setAccountsData(accounts);
             Button button = (Button) event.getSource();
             Stage stage = (Stage) button.getScene().getWindow();
 
-            /* Resident Login */
-            if (currentAccount.getAccountType().equals(AccountType.RESIDENT)) {
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("/stages/residentMenu/resident_mailbox_stage.fxml"));
-                stage.setScene(new Scene(loader.load(), 1280, 720));
-                ResidentMailboxController mailboxPage = loader.getController();
-                mailboxPage.setCurrentAccount(currentAccount);
-                stage.show();
-            } else if (currentAccount.getAccountType().equals(AccountType.OFFICER)) {
-                System.out.println("OFFICER");
-                // In process . . .
-            } else if (currentAccount.getAccountType().equals(AccountType.ADMINISTER)) {
-                System.out.println("ADMIN");
-                // In process . . .
+            if (currentAccount.isAvailable()) {
+                if (currentAccount.isResident()) {
+                    FXMLLoader loader = new FXMLLoader(getClass().getResource("/stages/residentMenu/resident_mailbox_stage.fxml"));
+                    stage.setScene(new Scene(loader.load(), 1280, 720));
+                    ResidentMailboxController mailboxPage = loader.getController();
+                    mailboxPage.setTheme(theme);
+                    mailboxPage.setAccountDataSource(accountDataSource);
+                    mailboxPage.setAccounts(accounts);
+                    mailboxPage.setRoomDataSource(roomDataSource);
+                    mailboxPage.setRooms(rooms);
+                    mailboxPage.setMailDataSource(mailDataSource);
+                    mailboxPage.setMails(mails);
+                    mailboxPage.setCurrentAccount(currentAccount.toResident());
+                    stage.show();
+                } else if (currentAccount.isOfficer()) {
+                    System.out.println("OFFICER");
+                    // In process . . .
+                } else if (currentAccount.isAdministrator()) {
+                    FXMLLoader loader = new FXMLLoader(getClass().getResource("/stages/administratorMenu/administrator_stage.fxml"));
+                    stage.setScene(new Scene(loader.load(), 1280, 720));
+                    stage.getScene().getStylesheets().add(theme);
+                    AdministratorController adminPage = loader.getController();
+                    adminPage.setTheme(theme);
+                    adminPage.setAccountDataSource(accountDataSource);
+                    adminPage.setAccounts(accounts);
+                    adminPage.setCurrentAccount(currentAccount.toAdministrator());
+                    stage.show();
+                }
+            } else {
+                if (currentAccount.isOfficer()) {
+                    currentAccount.toOfficer().addBannedLogin();
+                    accountDataSource.setAccountsData(accounts);
+                }
+                errorAlert.setText("This account has been disabled.");
             }
+        } catch (Exception e) {
+            errorAlert.setText("Wrong username or password. Try again.");
         }
     }
 

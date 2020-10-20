@@ -1,13 +1,76 @@
 .root {
-    -fx-background-color: orange;
+    -fx-background-color: #355070;
+}
+
+#loginPane {
+    -fx-background-image: url("/images/default/backgroundMainMenu.png");
+    -fx-background-size: cover, auto;
+    -fx-opacity: 0.5;
+}
+
+.label {
+    -fx-font-family: "Arial Rounded MT Bold";
+    -fx-font-size: 80;
+}
+
+#packmanLabel {
+    -fx-font-size: 80;
+    -fx-text-fill: WHITE;
+}
+
+#stanleeQuote {
+    -fx-font-size: 30;
+    -fx-text-fill: WHITE;
+}
+
+#errorAlert {
+    -fx-font-size: 20;
+    -fx-font-fill: #FF0000;
+}
+
+#registerButton, #themeButton {
+    -fx-border-color: TRANSPARENT;
+    -fx-background-radius: 40;
+    -fx-background-color: WHITE;
+    -fx-text-fill: BROWN;
+}
+
+#registerButton:hover, #themeButton:hover {
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;
+    -fx-background-color: FLORALWHITE;
+}
+
+#registerButton:pressed, #themeButton:pressed {
+    -fx-background-color: DARKGREY;
 }
 
 .button {
-    -fx-background-color: brown;
-    -fx-text-fill: white;
+    -fx-border-color: TRANSPARENT;
+    -fx-background-radius: 40;
+    -fx-background-color: BROWN;
+    -fx-text-fill: WHITE;
+}
+
+.button:hover {
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;
+    -fx-background-color: DARKRED;
+}
+
+.button:pressed {
+    -fx-background-color: CHOCOLATE;
 }
 
 .text-field {
     -fx-background-color: white;
-    -fx-text-fill: black;
+    -fx-background-radius: 40;
+    -fx-border-radius: 40;
 }
+
+.text-field:focused {
+    -fx-border-color: BROWN;
+    -fx-border-width: 2.5;
+}
+
+

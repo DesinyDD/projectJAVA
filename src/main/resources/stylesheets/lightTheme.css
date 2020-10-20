@@ -1,12 +1,28 @@
 .root {
-    -fx-background-color: white;
+    -fx-background-color: #771835;
 }
 
-.button {
-    -fx-background-color: yellow;
-    -fx-text-fill: black;
+#loginPane {
+    -fx-background-image: url("/images/default/backgroundMainMenu_.png");
+    -fx-background-size: cover, auto;
+    -fx-opacity: 0.5;
 }
 
-.text-field {
-    -fx-background-color: orange;
+.label {
+    -fx-font-family: "Arial Rounded MT Bold";
+}
+
+#packmanLabel {
+    -fx-font-size: 80;
+    -fx-text-fill: WHITE;
+}
+
+#stanleeQuote {
+    -fx-font-size: 30;
+    -fx-text-fill: WHITE;
+}
+
+#errorAlert {
+    -fx-font-size: 20;
+    -fx-font-fill: #FF0000;
 }
