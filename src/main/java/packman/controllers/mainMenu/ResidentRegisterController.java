@@ -58,7 +58,8 @@ public class ResidentRegisterController {
     @FXML private Label errorLabel;
 
     @FXML public void initialize() {
-        profileView.setFill(new ImagePattern(new Image("/images/avatar.png")));
+//        profileView.setFill(new ImagePattern(new Image("image/avatar.png")));
+        profileView.setFill(new ImagePattern(new Image("image/default/avatar.png")));
         chooserButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
@@ -77,7 +78,10 @@ public class ResidentRegisterController {
                         Path target = FileSystems.getDefault().getPath(destDir.getAbsolutePath() + File.separator + filename);
                         Files.copy(selectedFile.toPath(), target, StandardCopyOption.REPLACE_EXISTING);
                         profileView.setFill(new ImagePattern(new Image(target.toUri().toString())));
-                        picturePath = "image/userAvatar/" + target.getFileName().toString();
+
+                        /* !!! SWAP IT BEFORE BUILD JAR FILE !!! */
+                        picturePath = "image/userAvatar/" + target.getFileName().toString();      // ** FOR BUILD JAR FILE
+//                        picturePath = target.toUri().toString();                                    // ** FOR IntelliJ IDEA
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
@@ -98,29 +102,22 @@ public class ResidentRegisterController {
     }
 
     @FXML public void handleRegisterButtonOnAction(ActionEvent event) throws IOException {
-
-        /* Error Report for Empty Field */
-        if (firstnameField.getText().isEmpty()) { errorLabel.setText("Please enter first name."); }
-        else if (lastnameField.getText().isEmpty()) { errorLabel.setText("Please enter last name."); }
-        else if (usernameField.getText().isEmpty()) { errorLabel.setText("Please enter username."); }
-        else if (roomIDField.getText().isEmpty()) { errorLabel.setText("Please enter room number."); }
-        else if (passwordField.getText().isEmpty() || reEnterPasswordField.getText().isEmpty()) { errorLabel.setText("Please enter password."); }
-        else if (fileField.getText().isEmpty()) { errorLabel.setText("Please upload a profile picture."); }
-
-        /* Others Report */
-        else if (accounts.isUsernameUsed(usernameField.getText())) { errorLabel.setText("This username is already in use. Try again."); }
-        else if (!passwordField.getText().equals(reEnterPasswordField.getText())) { errorLabel.setText("Those passwords didn't match. Try again."); }
-        else if (!rooms.isAvailable(roomIDField.getText())) { errorLabel.setText("This room number is not available. Try again."); }
+        if (firstnameField.getText().isEmpty()) { errorLabel.setText("Please enter First Name."); }
+        else if (lastnameField.getText().isEmpty()) { errorLabel.setText("Please enter Last Name."); }
+        else if (usernameField.getText().isEmpty()) { errorLabel.setText("Please enter Username."); }
+        else if (accounts.isUsernameUsed(usernameField.getText())) { errorLabel.setText("This Username is already in use. Try again."); }
+        else if (roomIDField.getText().isEmpty()) { errorLabel.setText("Please enter Room ID."); }
+        else if (!rooms.isAvailable(roomIDField.getText())) { errorLabel.setText("This Room ID is not available. Try again."); }
         else if (rooms.getRoom(roomIDField.getText()).isStudio() && accounts.totalRoomer(roomIDField.getText()) == 1) { errorLabel.setText("This room number is full."); }
         else if (rooms.getRoom(roomIDField.getText()).isSuite()  && accounts.totalRoomer(roomIDField.getText()) == 2) { errorLabel.setText("This room number is full."); }
         else if (rooms.getRoom(roomIDField.getText()).isDuplex() && accounts.totalRoomer(roomIDField.getText()) == 4) { errorLabel.setText("This room number is full."); }
-
-        /* Create Resident Account & Back to login menu */
+        else if (passwordField.getText().isEmpty() || reEnterPasswordField.getText().isEmpty()) { errorLabel.setText("Please enter Password."); }
+        else if (!passwordField.getText().equals(reEnterPasswordField.getText())) { errorLabel.setText("Those Passwords didn't match. Try again."); }
+        else if (fileField.getText().isEmpty()) { errorLabel.setText("Please upload a Profile Picture."); }
         else {
             Account newAccount = new ResidentAccount(usernameField.getText(), passwordField.getText(), firstnameField.getText(), lastnameField.getText(), picturePath, LocalDateTime.now(), true, roomIDField.getText(), LocalDateTime.now());
             accounts.add(newAccount);
             accountDataSource.setAccountsData(accounts);
-
             Button button = (Button) event.getSource();
             Stage stage = (Stage) button.getScene().getWindow();
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/stages/mainMenu/login_stage.fxml"));

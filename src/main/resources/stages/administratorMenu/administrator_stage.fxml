@@ -10,27 +10,44 @@
 
 <AnchorPane prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="packman.controllers.administratorMenu.AdministratorController">
    <children>
-      <Circle fx:id="officerAvatar" fill="#ffffff00" layoutX="1128.0" layoutY="360.0" radius="120.0" stroke="BLACK" strokeType="INSIDE" />
-      <TableView fx:id="officersTable" layoutX="21.0" layoutY="187.0" prefHeight="507.0" prefWidth="954.0" />
-      <Button fx:id="logoutButton" layoutX="1161.0" layoutY="20.0" mnemonicParsing="false" onAction="#handleLogoutButtonOnAction" prefHeight="50.0" prefWidth="103.0" text="LOGOUT" />
-      <Label fx:id="banStatus" alignment="CENTER" contentDisplay="CENTER" layoutX="995.0" layoutY="522.0" prefHeight="81.0" prefWidth="266.0" text="Select some account." textAlignment="CENTER">
+      <Circle fx:id="officerAvatar" fill="#ffffff00" layoutX="1116.0" layoutY="228.0" radius="150.0" stroke="WHITE" strokeType="INSIDE" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="100.0" />
+      <TableView fx:id="officersTable" layoutX="19.0" layoutY="80.0" prefHeight="507.0" prefWidth="863.0" AnchorPane.bottomAnchor="130.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="320.0" AnchorPane.topAnchor="70.0" />
+      <Button fx:id="logoutButton" layoutX="1033.0" layoutY="644.0" mnemonicParsing="false" onAction="#handleLogoutButtonOnAction" prefHeight="50.0" prefWidth="200.0" text="LOGOUT" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="10.0">
          <font>
-            <Font name="Arial Rounded MT Bold" size="20.0" />
+            <Font name="Arial Rounded MT Bold" size="18.0" />
+         </font></Button>
+      <Label fx:id="banStatus" alignment="CENTER" contentDisplay="CENTER" layoutX="1004.0" layoutY="360.0" prefHeight="50.0" prefWidth="300.0" text="Select some account." textAlignment="CENTER" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="450.0">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="26.0" />
          </font>
       </Label>
-      <Button fx:id="changePassword" layoutX="986.0" layoutY="20.0" mnemonicParsing="false" onAction="#handleChangePasswordOnAction" prefHeight="50.0" prefWidth="157.0" text="CHANGE PASSWORD" />
-      <Circle fx:id="profileAvatar" fill="#ffffff00" layoutX="61.0" layoutY="54.0" radius="40.0" stroke="BLACK" strokeType="INSIDE" />
-      <Label fx:id="welcomeLabel" layoutX="130.0" layoutY="14.0" prefHeight="81.0" prefWidth="816.0" text="welcome" textAlignment="CENTER" />
-      <Button fx:id="banButton" layoutX="995.0" layoutY="644.0" mnemonicParsing="false" onAction="#handleBanButtonOnAction" prefHeight="50.0" prefWidth="266.0" text="BAN/UNBAN">
+      <Button fx:id="changePassword" layoutX="870.0" layoutY="660.0" mnemonicParsing="false" onAction="#handleChangePasswordOnAction" prefHeight="50.0" prefWidth="200.0" text="CHANGE PASSWORD" AnchorPane.bottomAnchor="70.0" AnchorPane.rightAnchor="10.0">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="16.0" />
+         </font></Button>
+      <Circle fx:id="profileAvatar" fill="#ffffff00" layoutX="54.0" layoutY="669.0" radius="55.0" stroke="WHITE" strokeType="INSIDE" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" />
+      <Label fx:id="welcomeLabel" layoutX="120.0" layoutY="600.0" prefHeight="110.0" prefWidth="730.0" textAlignment="CENTER" AnchorPane.leftAnchor="130.0" AnchorPane.rightAnchor="430.0">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="20.0" />
+         </font></Label>
+      <Button fx:id="banButton" layoutX="939.0" layoutY="464.0" mnemonicParsing="false" onAction="#handleBanButtonOnAction" prefHeight="50.0" prefWidth="300.0" text="BAN/UNBAN" AnchorPane.bottomAnchor="130.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="540.0">
          <font>
             <Font name="Arial Rounded MT Bold" size="20.0" />
          </font>
       </Button>
-      <TextField layoutX="280.0" layoutY="119.0" prefHeight="50.0" prefWidth="695.0" />
-      <Button fx:id="createAccountButton" layoutX="21.0" layoutY="119.0" mnemonicParsing="false" onAction="#handleCreateAccountButtonOnAction" prefHeight="50.0" prefWidth="240.0" text="CREATE OFFICER">
+      <TextField fx:id="filterField" layoutX="106.0" layoutY="30.0" onKeyTyped="#searchRecord" prefHeight="50.0" prefWidth="695.0" promptText=" Search" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="320.0" AnchorPane.topAnchor="10.0">
+         <font>
+            <Font size="16.0" />
+         </font></TextField>
+      <Button fx:id="createAccountButton" layoutX="946.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleCreateAccountButtonOnAction" prefHeight="50.0" prefWidth="300.0" text="CREATE OFFICER" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
          <font>
             <Font name="Arial Rounded MT Bold" size="20.0" />
          </font>
       </Button>
+      <Label fx:id="welcomeLabel" layoutX="178.0" layoutY="652.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="130.0" AnchorPane.rightAnchor="220.0" AnchorPane.topAnchor="600.0">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="30.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

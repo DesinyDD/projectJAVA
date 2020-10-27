@@ -1,3 +1,8 @@
-2,elon,elon,elon,musk,image/adminAvatar/muskPic.jpg,2020,10,20,22,8,31
-1,cook,cook,tim,cook,image/staffAvatar/cookPic.png,1,1,1,1,1,1,false,0
-0,jobs,jobs,steve,jobs,image/userAvatar/jobsPic.jpg,2020,10,20,22,10,24,true,A501,2020,10,20,22,10,22
+2,musk,musk,Elon,Musk,image/adminAvatar/muskPic.jpg,2020,10,28,0,48,12
+2,evans,chris,Chris,Evans,image/adminAvatar/evansPic.jpg,2009,10,27,4,36,53
+1,zuck,zuck,Mark,Zuckerberg,image/staffAvatar/zuckPic.jpg,2020,10,28,0,55,53,false,10
+1,cook,cook,Tim,Cook,image/staffAvatar/cookPic.jpg,2020,10,27,23,44,7,true,7
+0,bill,bill,Bill,Gates,image/userAvatar/gatesPic.jpg,2020,10,27,20,29,43,true,A800,2005,5,2,15,32,49
+0,jobs,jobs,Steve,Jobs,image/userAvatar/jobsPic.jpg,2020,10,27,21,41,9,true,A402,2012,10,24,15,32,49
+1,hulk,hulk,Mark,Ruffalo,image/staffAvatar/2020-10-27_1603749646817.png,2020,10,27,5,7,22,false,0
+0,mix,mix,Panupat,Chulaotrakul,image/userAvatar/2020-10-27_1603750078354.jpg,2020,10,27,21,58,20,true,A801,2020,10,27,5,7,59

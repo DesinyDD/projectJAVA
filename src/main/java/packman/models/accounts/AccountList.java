@@ -16,14 +16,22 @@ public class AccountList {
     }
 
     /* Setter */
-    public void setAccounts(Collection<Account> accounts) { this.accounts = accounts; }
+    public void setAccounts(Collection<Account> accounts) {
+        this.accounts = accounts;
+    }
 
     /* Getter */
-    public Collection<Account> getAccounts() { return accounts; }
+    public Collection<Account> getAccounts() {
+        return accounts;
+    }
 
-    public boolean add(Account account) { return accounts.add(account); }
+    public boolean add(Account account) {
+        return accounts.add(account);
+    }
 
-    public boolean remove(Account account) { return accounts.remove(account); }
+    public boolean remove(Account account) {
+        return accounts.remove(account);
+    }
 
     public Account findAccount(String username) {
         for (Account account : accounts) {
@@ -50,6 +58,16 @@ public class AccountList {
             }
         }
         throw new RuntimeException("Account with username " + username + " not found");
+    }
+
+    public ArrayList<Account> getRooms(String roomerName) {
+        ArrayList<Account> rooms = new ArrayList<>();
+        for (Account account : accounts) {
+            if (account.isResident() && account.toResident().getFullName().toUpperCase().contains(roomerName.toUpperCase())) {
+                rooms.add(account);
+            }
+        }
+        return rooms;
     }
 
     public Collection<Account> getRoomers(String roomID) {
@@ -101,8 +119,11 @@ public class AccountList {
         throw new RuntimeException("Username or Password is incorrect");
     }
 
-    public ArrayList<Account> toArrayList() { return (ArrayList<Account>) accounts; }
+    public ArrayList<Account> toArrayList() {
+        return (ArrayList<Account>) accounts;
+    }
 
-    public int totalRoomer(String roomNumber) { return this.getRoomers(roomNumber).size(); }
-
+    public int totalRoomer(String roomNumber) {
+        return this.getRoomers(roomNumber).size();
+    }
 }

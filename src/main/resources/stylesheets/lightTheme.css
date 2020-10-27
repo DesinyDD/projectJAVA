@@ -1,28 +1,139 @@
 .root {
-    -fx-background-color: #771835;
+    -fx-background-color: #66152E;
 }
 
-#loginPane {
-    -fx-background-image: url("/images/default/backgroundMainMenu_.png");
+.label {
+    -fx-text-fill: WHITE;
+}
+
+#errorLabel, #errorAlert {
+    -fx-text-fill: RED;
+}
+
+.button {
+    -fx-border-color: TRANSPARENT;
+    -fx-background-radius: 40;
+    -fx-background-color: #327E85;
+    -fx-text-fill: WHITE;
+}
+
+.button:hover {
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;
+    -fx-background-color: #112A2C;
+}
+
+.button:pressed {
+    -fx-background-color: #6CBEC6;
+}
+
+.text-field {
+    -fx-background-color: white;
+    -fx-background-radius: 40;
+    -fx-border-radius: 40;
+}
+
+.text-field:focused {
+    -fx-border-color: #327E85;
+    -fx-border-width: 2.5;
+}
+
+#loginPageBG {
+    -fx-background-image: url("/images/default/kirbyTheme/kirbyBG.jpg");
     -fx-background-size: cover, auto;
     -fx-opacity: 0.5;
 }
 
-.label {
-    -fx-font-family: "Arial Rounded MT Bold";
+#registerBG {
+    -fx-background-image: url("/images/default/kirbyTheme/kirbyBG_2.jpg");
+    -fx-background-size: cover, auto;
+    -fx-opacity: 0.5;
 }
 
-#packmanLabel {
-    -fx-font-size: 80;
+#resChangePassBG {
+    -fx-background-image: url("/images/default/kirbyTheme/kirbyBG_3.jpg");
+    -fx-background-size: cover, auto;
+    -fx-opacity: 0.5;
+}
+
+#adChangePassBG {
+    -fx-background-image: url("/images/default/kirbyTheme/kirbyBG_4.jpg");
+    -fx-background-size: cover, auto;
+    -fx-opacity: 0.5;
+}
+
+#staffChangePassBG {
+    -fx-background-image: url("/images/default/kirbyTheme/kirbyBG_5.jpg");
+    -fx-background-size: cover, auto;
+    -fx-opacity: 0.5;
+}
+
+#resiRegisPageBG {
+    -fx-background-image: url("/images/default/kirbyTheme/kirbyBG_6.jpg");
+    -fx-background-size: cover, auto;
+    -fx-opacity: 0.5;
+}
+
+#createRoomBG {
+    -fx-background-image: url("/images/default/kirbyTheme/kirbyBG_7.jpg");
+    -fx-background-size: cover, auto;
+    -fx-opacity: 0.5;
+}
+
+#staffRegisBG {
+    -fx-background-image: url("/images/default/kirbyTheme/kirbyBG_8.jpg");
+    -fx-background-size: cover, auto;
+    -fx-opacity: 0.5;
+}
+
+#staffChangePassBG {
+    -fx-background-image: url("/images/default/kirbyTheme/kirbyBG_9.jpg");
+    -fx-background-size: cover, auto;
+    -fx-opacity: 0.5;
+}
+
+#regisMailBG {
+    -fx-background-image: url("/images/default/kirbyTheme/kirbyBG_10.jpg");
+    -fx-background-size: cover, auto;
+    -fx-opacity: 0.5;
+}
+
+#devBG {
+    -fx-background-image: url("/images/default/kirbyTheme/kirbyBG_11.jpg");
+    -fx-background-size: cover, auto;
+    -fx-opacity: 0.5;
+}
+
+#helpBG {
+    -fx-background-image: url("/images/default/kirbyTheme/kirbyBG_12.jpg");
+    -fx-background-size: cover, auto;
+    -fx-opacity: 0.5;
+}
+
+.table-view .column-header, .table-view .filler {
+    -fx-background-color: #327E85;
+    -fx-text-align: center;
+}
+
+#packmanLabel, #stanleeQuote {
     -fx-text-fill: WHITE;
 }
 
-#stanleeQuote {
-    -fx-font-size: 30;
-    -fx-text-fill: WHITE;
+#registerButton, #themeButton, #changePasswordButton, #changePassword, #doneButton {
+    -fx-border-color: TRANSPARENT;
+    -fx-background-radius: 40;
+    -fx-background-color: WHITE;
+    -fx-text-fill: #327E85;
 }
 
-#errorAlert {
-    -fx-font-size: 20;
-    -fx-font-fill: #FF0000;
+#registerButton:hover, #themeButton:hover, #changePasswordButton:hover, #changePassword:hover, #doneButton:hover {
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;
+    -fx-background-color: FLORALWHITE;
 }
+
+#registerButton:pressed, #themeButton:pressed, #changePasswordButton:pressed, #changePassword:pressed, #doneButton:pressed {
+    -fx-background-color: DARKGREY;
+}
+
+

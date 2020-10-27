@@ -54,7 +54,8 @@ public class OfficerRegisterController {
     @FXML private Label errorLabel;
 
     @FXML public void initialize() {
-        profileView.setFill(new ImagePattern(new Image("/images/avatar.png")));
+        profileView.setFill(new ImagePattern(new Image("image/default/avatar.png")));
+//        profileView.setFill(new ImagePattern(new Image("/image/avatar.png")));
         chooserButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
@@ -66,7 +67,6 @@ public class OfficerRegisterController {
                     try {
                         picturePath = selectedFile.toURI().toString();
                         fileField.setText(selectedFile.getPath());
-//                        File destDir = new File("src/main/resources/images/staffAvatar");
                         File destDir = new File("image/staffAvatar");
                         destDir.mkdirs();
                         String[] fileSplit = selectedFile.getName().split("\\.");
@@ -74,8 +74,11 @@ public class OfficerRegisterController {
                         Path target = FileSystems.getDefault().getPath(destDir.getAbsolutePath() + File.separator + filename);
                         Files.copy(selectedFile.toPath(), target, StandardCopyOption.REPLACE_EXISTING);
                         profileView.setFill(new ImagePattern(new Image(target.toUri().toString())));
-//                        picturePath = "/images/staffAvatar/" + target.getFileName().toString();
-                        picturePath = "image/staffAvatar/" + target.getFileName().toString();
+
+                        /* !!! SWAP IT BEFORE BUILD JAR FILE !!! */
+                        picturePath = "image/staffAvatar/" + target.getFileName().toString();     // ** FOR BUILD JAR FILE
+//                        picturePath = target.toUri().toString();                                    // ** FOR IntelliJ IDEA
+
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
@@ -99,19 +102,13 @@ public class OfficerRegisterController {
     }
 
     @FXML public void handleRegisterButtonOnAction(ActionEvent event) throws IOException {
-
-        /* Error Report for Empty Field */
-        if (firstNameField.getText().isEmpty()) { errorLabel.setText("Please enter first name."); }
-        else if (lastNameField.getText().isEmpty()) { errorLabel.setText("Please enter last name."); }
-        else if (usernameField.getText().isEmpty()) { errorLabel.setText("Please enter username."); }
-        else if (passwordField.getText().isEmpty() || reEnterPasswordField.getText().isEmpty()) { errorLabel.setText("Please enter password."); }
-        else if (fileField.getText().isEmpty()) { errorLabel.setText("Please upload a profile picture."); }
-
-        /* Others Report */
-        else if (accounts.isUsernameUsed(usernameField.getText())) { errorLabel.setText("This username is already in use. Try again."); }
-        else if (!passwordField.getText().equals(reEnterPasswordField.getText())) { errorLabel.setText("Those passwords didn't match. Try again."); }
-
-        /* Create Resident Account & Back to login menu */
+        if (firstNameField.getText().isEmpty()) { errorLabel.setText("Please enter First Name."); }
+        else if (lastNameField.getText().isEmpty()) { errorLabel.setText("Please enter Last Name."); }
+        else if (usernameField.getText().isEmpty()) { errorLabel.setText("Please enter Username."); }
+        else if (accounts.isUsernameUsed(usernameField.getText())) { errorLabel.setText("This Username is already in use. Try again."); }
+        else if (passwordField.getText().isEmpty() || reEnterPasswordField.getText().isEmpty()) { errorLabel.setText("Please enter Password."); }
+        else if (!passwordField.getText().equals(reEnterPasswordField.getText())) { errorLabel.setText("Those Passwords didn't match. Try again."); }
+        else if (fileField.getText().isEmpty()) { errorLabel.setText("Please upload a Profile Picture."); }
         else {
             Account newAccount = new OfficerAccount(usernameField.getText(), passwordField.getText(), firstNameField.getText(), lastNameField.getText(), picturePath, LocalDateTime.of(1,1,1,1,1,1), false, 0);
             accounts.add(newAccount);

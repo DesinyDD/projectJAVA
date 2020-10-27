@@ -2,47 +2,12 @@
     -fx-background-color: #355070;
 }
 
-#loginPane {
-    -fx-background-image: url("/images/default/backgroundMainMenu.png");
-    -fx-background-size: cover, auto;
-    -fx-opacity: 0.5;
-}
-
 .label {
-    -fx-font-family: "Arial Rounded MT Bold";
-    -fx-font-size: 80;
-}
-
-#packmanLabel {
-    -fx-font-size: 80;
     -fx-text-fill: WHITE;
 }
 
-#stanleeQuote {
-    -fx-font-size: 30;
-    -fx-text-fill: WHITE;
-}
-
-#errorAlert {
-    -fx-font-size: 20;
-    -fx-font-fill: #FF0000;
-}
-
-#registerButton, #themeButton {
-    -fx-border-color: TRANSPARENT;
-    -fx-background-radius: 40;
-    -fx-background-color: WHITE;
-    -fx-text-fill: BROWN;
-}
-
-#registerButton:hover, #themeButton:hover {
-    -fx-scale-x: 1.05;
-    -fx-scale-y: 1.05;
-    -fx-background-color: FLORALWHITE;
-}
-
-#registerButton:pressed, #themeButton:pressed {
-    -fx-background-color: DARKGREY;
+#errorLabel, #errorAlert {
+    -fx-text-fill: RED;
 }
 
 .button {
@@ -71,6 +36,104 @@
 .text-field:focused {
     -fx-border-color: BROWN;
     -fx-border-width: 2.5;
+}
+
+#loginPageBG {
+    -fx-background-image: url("/images/default/spiderTheme/spiderManBG.jpg");
+    -fx-background-size: cover, auto;
+    -fx-opacity: 0.5;
+}
+
+#registerBG {
+    -fx-background-image: url("/images/default/spiderTheme/milesBG.jpg");
+    -fx-background-size: cover, auto;
+    -fx-opacity: 0.5;
+}
+
+#resChangePassBG {
+    -fx-background-image: url("/images/default/spiderTheme/miguelBG.jpg");
+    -fx-background-size: cover, auto;
+    -fx-opacity: 0.5;
+}
+
+#adChangePassBG {
+    -fx-background-image: url("/images/default/spiderTheme/spiderVenomBG.jpg");
+    -fx-background-size: cover, auto;
+    -fx-opacity: 0.5;
+}
+
+#staffChangePassBG {
+    -fx-background-image: url("/images/default/spiderTheme/superiorBG.jpg");
+    -fx-background-size: cover, auto;
+    -fx-opacity: 0.5;
+}
+
+#resiRegisPageBG {
+    -fx-background-image: url("/images/default/spiderTheme/noirBG.jpg");
+    -fx-background-size: cover, auto;
+    -fx-opacity: 0.5;
+}
+
+#createRoomBG {
+    -fx-background-image: url("/images/default/spiderTheme/ironSpiderBG.jpg");
+    -fx-background-size: cover, auto;
+    -fx-opacity: 0.5;
+}
+
+#staffRegisBG {
+    -fx-background-image: url("/images/default/spiderTheme/silkBG.jpg");
+    -fx-background-size: cover, auto;
+    -fx-opacity: 0.5;
+}
+
+#staffChangePassBG {
+    -fx-background-image: url("/images/default/spiderTheme/spiderTomBG.jpg");
+    -fx-background-size: cover, auto;
+    -fx-opacity: 0.5;
+}
+
+#regisMailBG {
+    -fx-background-image: url("/images/default/spiderTheme/spiderPS4.jpg");
+    -fx-background-size: cover, auto;
+    -fx-opacity: 0.5;
+}
+
+#devBG {
+    -fx-background-image: url("/images/default/spiderTheme/nanoIronSpiderBG.jpg");
+    -fx-background-size: cover, auto;
+    -fx-opacity: 0.5;
+}
+
+#helpBG {
+    -fx-background-image: url("/images/default/spiderTheme/confuseSpiderBG.jpg");
+    -fx-background-size: cover, auto;
+    -fx-opacity: 0.5;
+}
+
+.table-view .column-header, .table-view .filler {
+    -fx-background-color: BROWN;
+    -fx-text-align: center;
+}
+
+#packmanLabel, #stanleeQuote {
+    -fx-text-fill: WHITE;
+}
+
+#registerButton, #themeButton, #changePasswordButton, #changePassword, #doneButton {
+    -fx-border-color: TRANSPARENT;
+    -fx-background-radius: 40;
+    -fx-background-color: WHITE;
+    -fx-text-fill: BROWN;
+}
+
+#registerButton:hover, #themeButton:hover, #changePasswordButton:hover, #changePassword:hover, #doneButton:hover {
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;
+    -fx-background-color: FLORALWHITE;
+}
+
+#registerButton:pressed, #themeButton:pressed, #changePasswordButton:pressed, #changePassword:pressed, #doneButton:pressed {
+    -fx-background-color: DARKGREY;
 }
 
 

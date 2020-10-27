@@ -57,30 +57,24 @@ public class RoomFileDataSource implements RoomDataSource {
 
         while ((line = reader.readLine()) != null) {
             String[] data = line.split(",");
+            char towerID      = data[1].trim().charAt(0);
+            int floorNumber   = Integer.parseInt(data[2].trim());
+            String roomNumber = data[3].trim();
 
             /* StudioRoom */
             if (data[0].trim().equals("1")) {
-                String towerID     = data[1].trim();
-                String floorNumber = data[2].trim();
-                String roomNumber  = data[3].trim();
                 Room room = new StudioRoom(towerID, floorNumber, roomNumber);
                 rooms.add(room);
             }
 
             /* SuiteRoom */
             else if (data[0].trim().equals("2")) {
-                String towerID     = data[1].trim();
-                String floorNumber = data[2].trim();
-                String roomNumber  = data[3].trim();
                 Room room = new SuiteRoom(towerID, floorNumber, roomNumber);
                 rooms.add(room);
             }
 
             /* DuplexRoom */
             else if (data[0].trim().equals("4")) {
-                String towerID     = data[1].trim();
-                String floorNumber = data[2].trim();
-                String roomNumber  = data[3].trim();
                 Room room = new DuplexRoom(towerID, floorNumber, roomNumber);
                 rooms.add(room);
             }
@@ -100,6 +94,8 @@ public class RoomFileDataSource implements RoomDataSource {
                 String line = new String();
                 line = room.getMaxRoomer() + "," + room.getTowerID() + "," +
                         room.getFloorNumber() + "," + room.getRoomNumber();
+                writer.append(line);
+                writer.newLine();
             }
             writer.close();
         } catch (IOException e) {

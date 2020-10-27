@@ -10,53 +10,66 @@
 
 <AnchorPane maxHeight="720.0" maxWidth="1280.0" minHeight="0.0" minWidth="0.0" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="packman.controllers.mainMenu.LoginController">
    <children>
-      <AnchorPane fx:id="loginPane" prefHeight="727.0" prefWidth="1287.0" />
-      <Label fx:id="stanleeQuote" alignment="CENTER" contentDisplay="CENTER" layoutY="90.0" prefHeight="485.0" prefWidth="576.0" text="&quot; Life is never completely  &#10;without its challenges. &quot;&#10;&#10;- Stan Lee -" textAlignment="CENTER" textFill="WHITE">
+      <AnchorPane fx:id="loginPageBG" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="700.0" AnchorPane.topAnchor="0.0" />
+      <Label fx:id="stanleeQuote" alignment="CENTER" contentDisplay="CENTER" text="&quot; Life is never completely  &#10;without its challenges. &quot;&#10;&#10;- Stan Lee -" textAlignment="CENTER" textFill="WHITE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="700.0" AnchorPane.topAnchor="0.0">
          <font>
-            <Font name="Arial Rounded MT Bold" size="34.0" />
+            <Font name="Arial Rounded MT Bold" size="30.0" />
          </font>
       </Label>
-      <Button fx:id="helpButton" layoutX="1170.0" layoutY="10.0" mnemonicParsing="false" onAction="#handleHelpButtonOnAction" prefHeight="50.0" prefWidth="100.0" text="HELP" textFill="WHITE">
+      <Label fx:id="errorAlert" alignment="CENTER" layoutX="578.0" layoutY="433.0" prefHeight="40.0" prefWidth="700.0" textFill="RED" AnchorPane.topAnchor="440.0">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="20.0" />
+         </font></Label>
+      <Button fx:id="helpButton" layoutX="1170.0" layoutY="10.0" mnemonicParsing="false" onAction="#handleHelpButtonOnAction" prefHeight="50.0" prefWidth="100.0" text="HELP" textFill="WHITE" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
          <font>
             <Font name="Arial Rounded MT Bold" size="18.0" />
          </font>
       </Button>
-      <Button fx:id="registerButton" layoutX="768.0" layoutY="495.0" mnemonicParsing="false" onAction="#handleRegisterButtonOnAction" prefHeight="53.0" prefWidth="320.0" text="REGISTER" textFill="WHITE">
+      <Button fx:id="registerButton" layoutX="768.0" layoutY="495.0" mnemonicParsing="false" onAction="#handleRegisterButtonOnAction" prefHeight="53.0" prefWidth="320.0" text="REGISTER" textFill="WHITE" AnchorPane.leftAnchor="770.0" AnchorPane.rightAnchor="190.0" AnchorPane.topAnchor="505.0">
          <font>
             <Font name="Arial Rounded MT Bold" size="26.0" />
          </font>
       </Button>
-      <TextField fx:id="usernameField" layoutX="768.0" layoutY="239.0" prefHeight="50.0" prefWidth="320.0" promptText="Username">
+      <TextField fx:id="usernameField" layoutX="768.0" layoutY="239.0" prefHeight="50.0" prefWidth="320.0" promptText=" Username" AnchorPane.leftAnchor="770.0" AnchorPane.rightAnchor="190.0" AnchorPane.topAnchor="240.0">
          <font>
             <Font size="16.0" />
          </font>
       </TextField>
-      <PasswordField fx:id="passwordField" layoutX="768.0" layoutY="309.0" prefHeight="50.0" prefWidth="320.0" promptText="Password">
+      <PasswordField fx:id="passwordField" layoutX="768.0" layoutY="309.0" prefHeight="50.0" prefWidth="320.0" promptText=" Password" AnchorPane.leftAnchor="770.0" AnchorPane.rightAnchor="190.0" AnchorPane.topAnchor="315.0">
          <font>
             <Font size="16.0" />
          </font>
       </PasswordField>
-      <Button fx:id="loginButton" alignment="CENTER" contentDisplay="CENTER" layoutX="768.0" layoutY="380.0" mnemonicParsing="false" onAction="#handleLoginButtonOnAction" prefHeight="50.0" prefWidth="320.0" text="LOGIN" textAlignment="CENTER" textFill="WHITE">
+      <Button fx:id="loginButton" alignment="CENTER" contentDisplay="CENTER" layoutX="768.0" layoutY="380.0" mnemonicParsing="false" onAction="#handleLoginButtonOnAction" prefHeight="50.0" prefWidth="320.0" text="LOGIN" textAlignment="CENTER" textFill="WHITE" AnchorPane.leftAnchor="770.0" AnchorPane.rightAnchor="190.0" AnchorPane.topAnchor="390.0">
          <font>
             <Font name="Arial Rounded MT Bold" size="26.0" />
          </font>
       </Button>
-      <Label fx:id="packmanLabel" alignment="CENTER" layoutX="746.0" layoutY="105.0" prefHeight="94.0" prefWidth="364.0" text="PackMan" textAlignment="CENTER">
+      <Label fx:id="packmanLabel" alignment="CENTER" layoutX="746.0" layoutY="105.0" prefHeight="100.0" prefWidth="400.0" text="PackMan" textAlignment="CENTER" AnchorPane.leftAnchor="730.0" AnchorPane.rightAnchor="150.0" AnchorPane.topAnchor="105.0">
          <font>
-            <Font name="Arial Rounded MT Bold" size="51.0" />
+            <Font name="Arial Rounded MT Bold" size="80.0" />
          </font>
       </Label>
-      <Separator layoutX="768.0" layoutY="472.0" prefHeight="0.0" prefWidth="320.0" />
-      <Button fx:id="devInfoButton" layoutX="10.0" layoutY="660.0" mnemonicParsing="false" onAction="#handleDevInfoButtonOnAction" prefHeight="50.0" prefWidth="143.0" text="DEVELOPER" textFill="WHITE">
+      <Separator layoutX="768.0" layoutY="472.0" prefHeight="0.0" prefWidth="320.0" AnchorPane.leftAnchor="770.0" AnchorPane.rightAnchor="190.0" AnchorPane.topAnchor="480.0" />
+      <Button fx:id="devInfoButton" layoutX="10.0" layoutY="660.0" mnemonicParsing="false" onAction="#handleDevInfoButtonOnAction" prefHeight="50.0" prefWidth="150.0" text="DEVELOPER" textFill="WHITE" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0">
          <font>
             <Font name="Arial Rounded MT Bold" size="18.0" />
          </font>
       </Button>
-      <Button fx:id="themeButton" layoutX="1170.0" layoutY="660.0" mnemonicParsing="false" onAction="#handleThemeButtonOnAction" prefHeight="50.0" prefWidth="100.0" text="THEME">
+      <Button fx:id="themeButton" layoutX="1170.0" layoutY="660.0" mnemonicParsing="false" onAction="#handleThemeButtonOnAction" prefHeight="50.0" prefWidth="100.0" text="THEME" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="10.0">
          <font>
-            <Font name="Arial Rounded MT Bold" size="17.0" />
+            <Font name="Arial Rounded MT Bold" size="18.0" />
          </font>
       </Button>
-      <Label fx:id="errorAlert" alignment="CENTER" layoutX="578.0" layoutY="433.0" prefHeight="42.0" prefWidth="700.0" textFill="RED" />
+      <Label layoutX="768.0" layoutY="225.0" prefHeight="15.0" prefWidth="320.0" text="USERNAME" AnchorPane.leftAnchor="785.0" AnchorPane.rightAnchor="190.0" AnchorPane.topAnchor="225.0">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="785.0" layoutY="295.0" prefHeight="15.0" prefWidth="320.0" text="PASSWORD" AnchorPane.leftAnchor="785.0" AnchorPane.rightAnchor="190.0" AnchorPane.topAnchor="300.0">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="12.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

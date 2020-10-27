@@ -5,4 +5,7 @@ public interface Size {
 
     String getSize();
 
+    double getLength();
+    double getWidth();
+    double getHeight();
 }

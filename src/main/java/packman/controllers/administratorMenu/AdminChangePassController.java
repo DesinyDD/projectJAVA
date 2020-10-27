@@ -33,16 +33,17 @@ public class AdminChangePassController {
     @FXML private Label errorLabel;
 
     @FXML public void handleDoneButtonOnAction(ActionEvent event) throws IOException {
-        if (currentAccount.isPassword(oldPassField.getText()) && newPassField.getText().equals(reNewPassField.getText())) {
+        if (currentAccount.isPassword(oldPassField.getText()) && !oldPassField.getText().isEmpty() && !newPassField.getText().isEmpty() &&
+                newPassField.getText().equals(reNewPassField.getText()) && !reNewPassField.getText().isEmpty() ) {
             currentAccount.setPassword(newPassField.getText());
             accountDataSource.setAccountsData(accounts);
             handleBackButtonOnAction(event);
         } else {
-            if (oldPassField.getText().isEmpty()) { errorLabel.setText("Please enter old password."); }
-            else if (newPassField.getText().isEmpty()) { errorLabel.setText("Please enter new password."); }
-            else if (reNewPassField.getText().isEmpty()) { errorLabel.setText("Please enter re-enter new password."); }
-            else if (!currentAccount.isPassword(oldPassField.getText())) { errorLabel.setText("This old is not correct. Try again."); }
-            else if (!newPassField.getText().equals(reNewPassField.getText())) { errorLabel.setText("Those passwords didn't match. Try again."); }
+            if (oldPassField.getText().isEmpty()) { errorLabel.setText("Please enter Old Password."); }
+            else if (!currentAccount.isPassword(oldPassField.getText())) { errorLabel.setText("This Old Password is not correct. Try again."); }
+            else if (newPassField.getText().isEmpty()) { errorLabel.setText("Please enter New Password."); }
+            else if (reNewPassField.getText().isEmpty()) { errorLabel.setText("Please enter Retype New Password."); }
+            else if (!newPassField.getText().equals(reNewPassField.getText())) { errorLabel.setText("Those Passwords didn't match. Try again."); }
             else { errorLabel.setText("Something wrong. Try again."); }
         }
     }

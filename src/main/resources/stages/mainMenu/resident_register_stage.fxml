@@ -11,57 +11,106 @@
 
 <AnchorPane prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="packman.controllers.mainMenu.ResidentRegisterController">
    <children>
-      <Label contentDisplay="CENTER" layoutX="567.0" layoutY="117.0" text="Register">
-         <font>
-            <Font name="Arial Rounded MT Bold" size="36.0" />
-         </font>
-      </Label>
-      <TextField fx:id="firstnameField" layoutX="160.0" layoutY="120.0" prefHeight="50.0" prefWidth="300.0" promptText="Firstname">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </TextField>
-      <TextField fx:id="lastnameField" layoutX="160.0" layoutY="185.0" prefHeight="50.0" prefWidth="300.0" promptText="Lastname">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </TextField>
-      <TextField fx:id="usernameField" layoutX="160.0" layoutY="258.0" prefHeight="50.0" prefWidth="300.0" promptText="Username">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </TextField>
-      <TextField fx:id="roomIDField" layoutX="160.0" layoutY="321.0" prefHeight="50.0" prefWidth="300.0" promptText="Room ID">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </TextField>
-      <PasswordField fx:id="passwordField" layoutX="160.0" layoutY="383.0" prefHeight="50.0" prefWidth="300.0" promptText="Password">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </PasswordField>
-      <PasswordField fx:id="reEnterPasswordField" layoutX="160.0" layoutY="451.0" prefHeight="50.0" prefWidth="300.0" promptText="Re-Enter Password">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </PasswordField>
-      <Button fx:id="registerButton" layoutX="160.0" layoutY="518.0" mnemonicParsing="false" onAction="#handleRegisterButtonOnAction" prefHeight="39.0" prefWidth="300.0" text="REGISTER">
+      <AnchorPane fx:id="registerBG" layoutX="519.0" layoutY="-10.0" prefHeight="720.0" prefWidth="285.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="700.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+      <Button fx:id="homeButton" layoutX="1160.0" layoutY="640.0" mnemonicParsing="false" onAction="#handleHomeButtonOnAction" prefHeight="50.0" prefWidth="100.0" text="BACK" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="10.0">
          <font>
             <Font name="Arial Rounded MT Bold" size="18.0" />
-         </font>
-      </Button>
-      <Separator layoutX="475.0" layoutY="169.0" prefHeight="0.0" prefWidth="460.0" />
-      <Button fx:id="homeButton" layoutX="1160.0" layoutY="640.0" mnemonicParsing="false" onAction="#handleHomeButtonOnAction" prefHeight="53.0" prefWidth="80.0" text="Home" />
-      <Button fx:id="chooserButton" layoutX="778.0" layoutY="410.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="103.0" text="UPLOAD" />
-      <TextField fx:id="fileField" editable="false" layoutX="616.0" layoutY="410.0" prefHeight="50.0" prefWidth="149.0" promptText="File" />
-      <Label fx:id="errorLabel" alignment="CENTER" layoutX="213.0" layoutY="623.0" prefHeight="43.0" prefWidth="610.0">
-         <font>
-            <Font size="29.0" />
-         </font>
-      </Label>
-      <Circle fx:id="profileView" fill="#ffffff00" layoutX="742.0" layoutY="283.0" radius="100.0" stroke="BLACK" strokeType="INSIDE" />
-      <Label layoutX="160.0" layoutY="105.0" text="FIRSTNAME" />
-      <Label layoutX="160.0" layoutY="170.0" text="LASTNAME" />
+         </font></Button>
+      <Circle fx:id="profileView" fill="#ffffff00" layoutX="992.0" layoutY="360.0" radius="150.0" stroke="WHITE" strokeType="INSIDE" AnchorPane.bottomAnchor="210.0" AnchorPane.leftAnchor="840.0" AnchorPane.rightAnchor="140.0" AnchorPane.topAnchor="210.0" />
+      <AnchorPane layoutX="314.0" layoutY="75.0" prefHeight="720.0" prefWidth="285.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="580.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="150.0" layoutY="14.0" prefHeight="75.0" prefWidth="400.0" text="Register" AnchorPane.rightAnchor="150.0" AnchorPane.topAnchor="15.0">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="60.0" />
+               </font>
+            </Label>
+            <Separator layoutX="120.0" layoutY="119.0" prefHeight="0.0" prefWidth="460.0" AnchorPane.leftAnchor="120.0" AnchorPane.rightAnchor="120.0" AnchorPane.topAnchor="95.0" />
+            <Label layoutX="190.0" layoutY="168.0" prefHeight="15.0" prefWidth="320.0" text="FIRSTNAME" AnchorPane.leftAnchor="205.0" AnchorPane.rightAnchor="190.0" AnchorPane.topAnchor="105.0">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="12.0" />
+               </font>
+            </Label>
+            <TextField fx:id="firstnameField" layoutX="190.0" layoutY="183.0" prefHeight="50.0" prefWidth="320.0" promptText=" Firstname" AnchorPane.leftAnchor="190.0" AnchorPane.rightAnchor="190.0" AnchorPane.topAnchor="120.0">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </TextField>
+            <Label layoutX="190.0" layoutY="243.0" prefHeight="15.0" prefWidth="320.0" text="LASTNAME" AnchorPane.leftAnchor="205.0" AnchorPane.rightAnchor="190.0" AnchorPane.topAnchor="180.0">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="12.0" />
+               </font>
+            </Label>
+            <TextField fx:id="lastnameField" layoutX="190.0" layoutY="266.0" prefHeight="50.0" prefWidth="320.0" promptText=" Lastname" AnchorPane.leftAnchor="190.0" AnchorPane.rightAnchor="190.0" AnchorPane.topAnchor="195.0">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </TextField>
+            <Label layoutX="190.0" layoutY="270.0" prefHeight="15.0" prefWidth="320.0" text="USERNAME" AnchorPane.leftAnchor="205.0" AnchorPane.rightAnchor="190.0" AnchorPane.topAnchor="255.0">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="12.0" />
+               </font>
+            </Label>
+            <TextField fx:id="usernameField" layoutX="190.0" layoutY="335.0" prefHeight="50.0" prefWidth="320.0" promptText=" Username" AnchorPane.leftAnchor="190.0" AnchorPane.rightAnchor="190.0" AnchorPane.topAnchor="270.0">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </TextField>
+            <Label layoutX="190.0" layoutY="385.0" prefHeight="15.0" prefWidth="320.0" text="ROOM ID" AnchorPane.leftAnchor="205.0" AnchorPane.rightAnchor="190.0" AnchorPane.topAnchor="330.0">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="12.0" />
+               </font>
+            </Label>
+            <TextField fx:id="roomIDField" layoutX="190.0" layoutY="404.0" prefHeight="50.0" prefWidth="320.0" promptText=" Room ID" AnchorPane.leftAnchor="190.0" AnchorPane.rightAnchor="190.0" AnchorPane.topAnchor="345.0">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </TextField>
+            <Label layoutX="197.0" layoutY="430.0" prefHeight="15.0" prefWidth="320.0" text="PASSWORD" AnchorPane.leftAnchor="205.0" AnchorPane.rightAnchor="190.0" AnchorPane.topAnchor="405.0">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="12.0" />
+               </font>
+            </Label>
+            <PasswordField fx:id="passwordField" layoutX="184.0" layoutY="454.0" prefHeight="50.0" prefWidth="320.0" promptText=" Password" AnchorPane.leftAnchor="190.0" AnchorPane.rightAnchor="190.0" AnchorPane.topAnchor="420.0">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </PasswordField>
+            <Label layoutX="190.0" layoutY="495.0" prefWidth="320.0" text="RE-TYPE PASSWORD" AnchorPane.leftAnchor="205.0" AnchorPane.rightAnchor="190.0" AnchorPane.topAnchor="480.0">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="12.0" />
+               </font>
+            </Label>
+            <PasswordField fx:id="reEnterPasswordField" layoutX="184.0" layoutY="519.0" prefHeight="50.0" prefWidth="320.0" promptText=" Retype Password" AnchorPane.leftAnchor="190.0" AnchorPane.rightAnchor="190.0" AnchorPane.topAnchor="495.0">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </PasswordField>
+            <Label layoutX="190.0" layoutY="546.0" prefWidth="320.0" text="PROFILE PICTURE" AnchorPane.leftAnchor="205.0" AnchorPane.rightAnchor="190.0" AnchorPane.topAnchor="555.0">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="12.0" />
+               </font>
+            </Label>
+            <TextField fx:id="fileField" editable="false" layoutX="190.0" layoutY="572.0" prefHeight="50.0" prefWidth="150.0" promptText=" Profile Picture" AnchorPane.leftAnchor="190.0" AnchorPane.rightAnchor="350.0" AnchorPane.topAnchor="570.0">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </TextField>
+            <Button fx:id="chooserButton" layoutX="407.0" layoutY="570.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" text="UPLOAD" AnchorPane.leftAnchor="360.0" AnchorPane.rightAnchor="190.0" AnchorPane.topAnchor="570.0">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="registerButton" layoutX="190.0" layoutY="656.0" mnemonicParsing="false" onAction="#handleRegisterButtonOnAction" prefHeight="50.0" prefWidth="320.0" text="REGISTER" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="190.0" AnchorPane.rightAnchor="190.0">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="18.0" />
+               </font>
+            </Button>
+            <Label fx:id="errorLabel" alignment="CENTER" layoutY="622.0" prefHeight="40.0" prefWidth="700.0" textFill="RED" AnchorPane.bottomAnchor="60.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="620.0">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="20.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
    </children>
 </AnchorPane>

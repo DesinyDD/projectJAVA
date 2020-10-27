@@ -10,9 +10,9 @@ public class RoomHardcodeDataSource implements RoomDataSource {
     @Override
     public RoomList getRoomsData() {
         RoomList rooms = new RoomList();
-        rooms.add(new StudioRoom("B", "5", "06"));
-        rooms.add(new SuiteRoom( "B", "2", "11"));
-        rooms.add(new DuplexRoom("A", "7", "09"));
+        rooms.add(new StudioRoom('B', 5, "06"));
+        rooms.add(new SuiteRoom( 'B', 2, "11"));
+        rooms.add(new DuplexRoom('A', 7, "09"));
         return rooms;
     }
 

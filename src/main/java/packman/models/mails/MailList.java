@@ -1,5 +1,6 @@
 package packman.models.mails;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Collection;
 
@@ -20,11 +21,28 @@ public class MailList {
     public ArrayList<Mail> getMails(String roomID) {
         ArrayList<Mail> mailBox = new ArrayList<>();
         for (Mail mail : mails) {
-            if (mail.isForRoomID(roomID)) {
+            if (mail.isForRoomID(roomID))
                 mailBox.add(mail);
-            }
         }
         return mailBox;
+    }
+
+    public ArrayList<Mail> getDisMissedMails() {
+        ArrayList<Mail> disMissedMails = new ArrayList<>();
+        for (Mail mail : mails)
+            if (mail.getSendingTime().isEqual(LocalDateTime.of(1,1,1,1,1,1))) {
+                disMissedMails.add(mail);
+        }
+        return disMissedMails;
+    }
+
+    public ArrayList<Mail> getAcceptedMails() {
+        ArrayList<Mail> acceptedMails = new ArrayList<>();
+        for (Mail mail : mails) {
+            if (!mail.getSendingTime().isEqual(LocalDateTime.of(1,1,1,1,1,1)))
+                acceptedMails.add(mail);
+        }
+        return acceptedMails;
     }
 
     public ArrayList<Mail> toArrayList() { return (ArrayList<Mail>) mails; }

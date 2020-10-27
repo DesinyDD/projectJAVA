@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="packman.controllers.officerMenu.RoomManageController">
+   <children>
+      <Label fx:id="verifiedLabel" alignment="CENTER" layoutX="274.0" layoutY="157.0" prefHeight="195.0" prefWidth="720.0" text="Are You Sure?" textAlignment="CENTER" visible="false" AnchorPane.leftAnchor="280.0" AnchorPane.rightAnchor="280.0" AnchorPane.topAnchor="120.0">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="96.0" />
+         </font></Label>
+      <Button fx:id="yesButton" layoutX="210.0" layoutY="430.0" mnemonicParsing="false" onAction="#handleYesButtonOnAction" prefHeight="130.0" prefWidth="320.0" text="YES" visible="false" AnchorPane.bottomAnchor="180.0" AnchorPane.leftAnchor="200.0">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="60.0" />
+         </font>
+      </Button>
+      <Button fx:id="noButton" layoutX="829.0" layoutY="430.0" mnemonicParsing="false" onAction="#handleNoButtonOnAction" prefHeight="130.0" prefWidth="320.0" text="NO" visible="false" AnchorPane.bottomAnchor="180.0" AnchorPane.rightAnchor="200.0">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="60.0" />
+         </font></Button>
+      <AnchorPane fx:id="pane_1" layoutX="148.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="130.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="860.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Button fx:id="roomRegisterButton" layoutX="6.0" layoutY="13.0" mnemonicParsing="false" onAction="#handleRoomRegisterButtonOnAction" prefHeight="50.0" prefWidth="200.0" text="ADD ROOM" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="residentRegisterButton" layoutX="158.0" layoutY="15.0" mnemonicParsing="false" onAction="#handleResidentRegisterButtonOnAction" prefHeight="50.0" prefWidth="200.0" text="ADD RESIDENT" AnchorPane.leftAnchor="220.0" AnchorPane.topAnchor="10.0">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="18.0" />
+               </font>
+            </Button>
+            <Label fx:id="roomType_label" alignment="CENTER" layoutX="-31.0" layoutY="70.0" prefHeight="50.0" prefWidth="200.0" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="70.0">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="30.0" />
+               </font>
+            </Label>
+            <Label fx:id="room_label" alignment="CENTER" layoutX="214.0" layoutY="75.0" prefHeight="50.0" prefWidth="200.0" AnchorPane.leftAnchor="220.0" AnchorPane.topAnchor="70.0">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="30.0" />
+               </font>
+            </Label>
+            <TableView fx:id="roomsTable" layoutX="5.0" layoutY="238.0" prefHeight="405.0" prefWidth="410.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="130.0" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="pane_2" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="660.0" AnchorPane.leftAnchor="430.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <TextField fx:id="filterField" layoutX="-176.0" layoutY="12.0" onKeyTyped="#searchRecord" prefHeight="50.0" prefWidth="500.0" promptText=" Search (Resident's Name)" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="210.0" AnchorPane.topAnchor="10.0">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </TextField>
+            <Button fx:id="mailRoomButton" layoutX="600.0" layoutY="23.0" mnemonicParsing="false" onAction="#handleMailRoomButtonOnAction" prefHeight="50.0" prefWidth="200.0" text="MAIL ROOM" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="10.0">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="18.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="pane_3" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="130.0" AnchorPane.leftAnchor="430.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="70.0">
+         <children>
+            <Button fx:id="roomer_1b" layoutX="630.0" layoutY="95.0" mnemonicParsing="false" onAction="#handleRoomer_1bOnAction" prefHeight="50.0" prefWidth="100.0" text="DELETE" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="95.0">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="roomer_2b" layoutX="740.0" layoutY="210.0" mnemonicParsing="false" onAction="#handleRoomer_2bOnAction" prefHeight="50.0" prefWidth="100.0" text="DELETE" AnchorPane.leftAnchor="740.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="210.0">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="roomer_3b" layoutX="740.0" layoutY="325.0" mnemonicParsing="false" onAction="#handleRoomer_3bOnAction" prefHeight="50.0" prefWidth="100.0" text="DELETE" AnchorPane.bottomAnchor="145.0" AnchorPane.rightAnchor="0.0">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="roomer_4b" layoutX="30.0" layoutY="430.0" mnemonicParsing="false" onAction="#handleRoomer_4bOnAction" prefHeight="50.0" prefWidth="100.0" text="DELETE" AnchorPane.bottomAnchor="30.0" AnchorPane.rightAnchor="0.0">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="18.0" />
+               </font>
+            </Button>
+            <Circle fx:id="roomer_1c" fill="#ffffff00" layoutX="223.0" layoutY="95.0" radius="55.0" stroke="WHITE" strokeType="INSIDE" AnchorPane.bottomAnchor="345.0" AnchorPane.leftAnchor="70.0" />
+            <Circle fx:id="roomer_2c" fill="#ffffff00" layoutX="230.0" layoutY="229.0" radius="55.0" stroke="WHITE" strokeType="INSIDE" AnchorPane.bottomAnchor="230.0" AnchorPane.leftAnchor="70.0" />
+            <Circle fx:id="roomer_3c" fill="#ffffff00" layoutX="229.0" layoutY="364.0" radius="55.0" stroke="WHITE" strokeType="INSIDE" AnchorPane.bottomAnchor="115.0" AnchorPane.leftAnchor="70.0" />
+            <Circle fx:id="roomer_4c" fill="#ffffff00" layoutX="240.0" layoutY="455.0" radius="55.0" stroke="WHITE" strokeType="INSIDE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="70.0" />
+            <Label fx:id="roomer_1l" layoutX="190.0" layoutY="95.0" prefHeight="50.0" prefWidth="500.0" AnchorPane.leftAnchor="190.0" AnchorPane.rightAnchor="110.0" AnchorPane.topAnchor="95.0">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="30.0" />
+               </font>
+            </Label>
+            <Label fx:id="roomer_2l" layoutX="180.0" layoutY="210.0" prefHeight="50.0" prefWidth="430.0" AnchorPane.leftAnchor="190.0" AnchorPane.rightAnchor="110.0" AnchorPane.topAnchor="210.0">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="30.0" />
+               </font>
+            </Label>
+            <Label fx:id="roomer_3l" layoutX="180.0" layoutY="325.0" prefHeight="50.0" prefWidth="430.0" AnchorPane.bottomAnchor="145.0" AnchorPane.leftAnchor="190.0" AnchorPane.rightAnchor="110.0">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="30.0" />
+               </font>
+            </Label>
+            <Label fx:id="roomer_4l" layoutX="180.0" layoutY="440.0" prefHeight="50.0" prefWidth="430.0" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="190.0" AnchorPane.rightAnchor="110.0">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="30.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="pane_4" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="600.0">
+         <children>
+            <Circle fx:id="profileAvatar" fill="#ffffff00" layoutX="67.0" layoutY="66.0" radius="55.0" stroke="WHITE" strokeType="INSIDE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" />
+            <Button fx:id="logoutButton" layoutX="1024.0" layoutY="58.0" mnemonicParsing="false" onAction="#handleLogoutButtonOnAction" prefHeight="50.0" prefWidth="200.0" text="LOGOUT" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="changePasswordButton" layoutX="1022.0" layoutY="3.0" mnemonicParsing="false" onAction="#handleChangePasswordButtonOnAction" prefHeight="50.0" prefWidth="200.0" text="CHANGE PASSWORD" AnchorPane.bottomAnchor="60.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="16.0" />
+               </font>
+            </Button>
+            <Label fx:id="welcomeLabel" layoutX="165.0" layoutY="44.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="120.0" AnchorPane.rightAnchor="210.0" AnchorPane.topAnchor="0.0">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="30.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

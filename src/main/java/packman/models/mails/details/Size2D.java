@@ -19,6 +19,9 @@ public class Size2D implements Size {
     public double getWidth() { return width; }
 
     @Override
+    public double getHeight() { return 0; }
+
+    @Override
     public double getVolume() { return length * width; }
 
     @Override
