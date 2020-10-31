@@ -4,81 +4,21 @@
 
 ## Update (Commits)
 
-#### (13/09/2020)
+#### (01/11/2020)
 
-- [**7d97b75**](https://bitbucket.org/6210402488/6210402488/commits/7d97b75/)
- 
-    - README.md created online with Bitbucket
+- **Recent Commit**
 
-    - สร้างไฟล์ README.md ผ่าน Bitbukket เพื่อให้มีไฟล์อยู่ใน Repository เพื่อทดสอบการ Pull ลงมาที่ Computer
- 
-- [**7b0507e**](https://bitbucket.org/6210402488/6210402488/commits/7b0507e/)
- 
-    - add maven to project
+    - update PDF file and add UML Class Diagram
     
-    - เพิ่ม Framework ของ Maven เข้าสู่ Project
-                                                                              
-#### (17/09/2020)
-   
-- [**caa625b**](https://bitbucket.org/6210402488/6210402488/commits/caa625b/)
- 
-    - fix package name & README.md
-
-    - แก้ไขชื่อ Package หลักเป็น `controllers`, `models ` และ `services`
-                                                                                                             
-    - แก้ไขไฟล์ README.md ให้มีชื่อผู้จัดทำ
-                                                                               
-- [**92ebde1**](https://bitbucket.org/6210402488/6210402488/commits/92ebde1/)
- 
-    - update main package
-
-    - นำไฟล์ใน Project จัดใส่ Package `packman` ซึ่งเป็น Package หลัก
-
-#### (21/09/2020)
-                                                                               
-- [**e12f10c**](https://bitbucket.org/6210402488/6210402488/commits/e12f10c/)
- 
-    - add login & register UI
-                                        
-    - เพิ่ม GUI ของหน้าลงทะเบียน กับหน้าล็อคอิน
-
-#### (26/09/2020)
-                                                              
-- [**58f28dc**](https://bitbucket.org/6210402488/6210402488/commits/58f28dc/)
- 
-    - add models
-                                                                                
-    - นำ bootstrapfx ออกจาก Project
-
-    - เพิ่ม Class ภายใต้ Package `models`
-                                                                               
-#### (29/09/2020)
-
-- [**ce2481c**](https://bitbucket.org/6210402488/6210402488/commits/ce2481c/)
-
-    - update package models
+    - ปรับปรุงแก้ไขไฟล์ PDF ให้สมบูรณ์
     
-    - ปรับปรุงแก้ไข Class ภายใต้ Package `models`
-
-#### (05/10/2020)
-
-- [**4066fea**](https://bitbucket.org/6210402488/6210402488/commits/4066fea/)
-
-    - add main menu & account database
-
-    - เพิ่มหน้า Main Menu และระบบฐานข้อมูลของบัญชีผู้ใช้งาน
-
-#### (20/10/2020)
-
-- [**019a821**](https://bitbucket.org/6210402488/6210402488/commits/019a821/)
-
-    - create admin page
-
-    - สร้าง GUI ในส่วนของ Administer
+    - ปรับปรุง README.md
+    
+    - เพิ่ม UML Class Diagram
 
 #### (28/10/2020)
 
-- **Recent Commit**
+- [**e8e5888**](https://bitbucket.org/6210402488/6210402488/commits/e8e5888/)
  
     - major update
 
@@ -91,7 +31,80 @@
     - ปรับปรุงแก้ไข Package `models` ให้ทำงานได้มีประสิทธิภาพยิ่งขึ้น
     
     - สร้างการแสดงผล และบันทึกรูปภาพจากผู้ใช้งาน
-  
+
+#### (20/10/2020)
+
+- [**019a821**](https://bitbucket.org/6210402488/6210402488/commits/019a821/)
+
+    - create admin page
+
+    - สร้าง GUI ในส่วนของ Administer
+
+#### (05/10/2020)
+
+- [**4066fea**](https://bitbucket.org/6210402488/6210402488/commits/4066fea/)
+
+    - add main menu & account database
+
+    - เพิ่มหน้า Main Menu และระบบฐานข้อมูลของบัญชีผู้ใช้งาน
+
+
+#### (29/09/2020)
+
+- [**ce2481c**](https://bitbucket.org/6210402488/6210402488/commits/ce2481c/)
+
+    - update package models
+    
+    - ปรับปรุงแก้ไข Class ภายใต้ Package `models`
+
+#### (26/09/2020)
+                                                              
+- [**58f28dc**](https://bitbucket.org/6210402488/6210402488/commits/58f28dc/)
+ 
+    - add models
+                                                                                
+    - นำ bootstrapfx ออกจาก Project
+
+    - เพิ่ม Class ภายใต้ Package `models`
+
+#### (21/09/2020)
+                                                                               
+- [**e12f10c**](https://bitbucket.org/6210402488/6210402488/commits/e12f10c/)
+ 
+    - add login & register UI
+                                        
+    - เพิ่ม GUI ของหน้าลงทะเบียน กับหน้าล็อคอิน
+                                                                               
+#### (17/09/2020)
+
+- [**92ebde1**](https://bitbucket.org/6210402488/6210402488/commits/92ebde1/)
+ 
+    - update main package
+
+    - นำไฟล์ใน Project จัดใส่ Package `packman` ซึ่งเป็น Package หลัก
+   
+- [**caa625b**](https://bitbucket.org/6210402488/6210402488/commits/caa625b/)
+ 
+    - fix package name & README.md
+
+    - แก้ไขชื่อ Package หลักเป็น `controllers`, `models ` และ `services`
+                                                                                                             
+    - แก้ไขไฟล์ README.md ให้มีชื่อผู้จัดทำ
+
+#### (13/09/2020)
+
+- [**7b0507e**](https://bitbucket.org/6210402488/6210402488/commits/7b0507e/)
+ 
+    - add maven to project
+    
+    - เพิ่ม Framework ของ Maven เข้าสู่ Project
+
+- [**7d97b75**](https://bitbucket.org/6210402488/6210402488/commits/7d97b75/)
+ 
+    - README.md created online with Bitbucket
+
+    - สร้างไฟล์ README.md ผ่าน Bitbukket เพื่อให้มีไฟล์อยู่ใน Repository เพื่อทดสอบการ Pull ลงมาที่ Computer
+                                                                           
 ## Repository
 
 - **data**
@@ -480,7 +493,7 @@
                 
                     > ไฟล์ .css สำหรับเปลี่ยนเป็น Theme Kirby
 
-- manual.pdf
+- 6210402488.pdf
 
     > คู่มือการใช้งานโปรแกรม PackMan
                 
@@ -512,7 +525,7 @@ Double-click on the launcher.bat and 6210402488-jar.jar will open smoothly.
 
 ## Suggestion
 
-> ควรศึกษาวิธีการใช้งานอย่างละเอียดผ่านไฟล์ manual.pdf ที่ผู้จัดทำได้เขียนเอาไว้
+> ควรศึกษาวิธีการใช้งานอย่างละเอียดผ่านไฟล์ 6210402488.pdf ที่ผู้จัดทำได้เขียนเอาไว้
 
 > สำหรับลูกบ้านที่ยังไม่มีบัญชีผู้ใช้ และทราบหมายเลขห้องพักของตนเองแล้ว สามารถกดปุ่ม Register เพื่อสร้างบัญชีผู้ใช้ของตนเองได้เลย
 

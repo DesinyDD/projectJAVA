@@ -64,7 +64,7 @@ public class MailRoomController {
     private FilteredList filteredData;
 
     @FXML private Circle mailPicture;
-    @FXML private Circle currentAccountAvatar;
+//    @FXML private Circle currentAccountAvatar;
     @FXML private TableView mailsTable;
     @FXML private Label mailLabel;
     @FXML private Label description_1;
@@ -73,7 +73,7 @@ public class MailRoomController {
     @FXML private TextField filterField;
 
     @FXML public void initialize() {
-        Platform.runLater(() -> currentAccountAvatar.setFill(new ImagePattern(new Image(currentAccount.getPicPath()))));
+//        Platform.runLater(() -> currentAccountAvatar.setFill(new ImagePattern(new Image(currentAccount.getPicPath()))));
         Platform.runLater(() -> mailPicture.setFill(new ImagePattern(new Image(defaultMailPath))));
         Platform.runLater(() -> mailBox.setMails(mails.getDisMissedMails()));
         Platform.runLater(() -> showMailData());

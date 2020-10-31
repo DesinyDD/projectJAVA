@@ -98,7 +98,7 @@ public abstract class Mail implements Comparable {
     public Document toDocument() { return (Document) this; }
     public Parcel toParcel() { return (Parcel) this; }
 
-    public Double getVolume() { return size.getVolume(); }
+    public double getVolume() { return size.getVolume(); }
 
     public boolean isForRoomID(String roomID) { return this.getReceiverRoomID().equals(roomID); }
 

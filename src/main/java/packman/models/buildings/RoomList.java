@@ -1,7 +1,5 @@
 package packman.models.buildings;
 
-import packman.models.accounts.Account;
-
 import java.util.ArrayList;
 
 public class RoomList {

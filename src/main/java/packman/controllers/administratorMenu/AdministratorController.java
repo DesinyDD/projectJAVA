@@ -144,6 +144,7 @@ public class AdministratorController {
     @FXML public void handleBanButtonOnAction() {
         if (selectedOfficer != null) {
             selectedOfficer.switchBan();
+            selectedOfficer.setBannedLoginCount(0);
             accountDataSource.setAccountsData(accounts);
             officersTable.refresh();
             showSelectedOfficer(selectedOfficer);
