@@ -28,6 +28,7 @@ import packman.services.roomDataBase.RoomFileDataSource;
 import packman.services.roomDataBase.RoomHardcodeDataSource;
 
 import java.io.IOException;
+import java.time.LocalDateTime;
 
 public class LoginController {
     private String theme;
@@ -70,19 +71,30 @@ public class LoginController {
 
     /* Login to PackMan */
     @FXML public void handleLoginButtonOnAction(ActionEvent event) {
-        if (usernameField.getText().isEmpty()) {
+        if (usernameField.getText().isEmpty())
+        {
             errorAlert.setText("Please enter Username.");
-        } else if (passwordField.getText().isEmpty()) {
+        }
+
+        else if (passwordField.getText().isEmpty())
+        {
             errorAlert.setText("Please enter Password.");
-        } else {
-            try {
+        }
+        else
+        {
+            try
+            {
                 currentAccount = accounts.login(usernameField.getText(), passwordField.getText());
-                accountDataSource.setAccountsData(accounts);
                 Button button = (Button) event.getSource();
                 Stage stage = (Stage) button.getScene().getWindow();
 
-                if (currentAccount.isAvailable()) {
-                    if (currentAccount.isResident()) {
+                if (currentAccount.isAvailable())
+                {
+                    currentAccount.setLastLogin(LocalDateTime.now());
+                    accountDataSource.setAccountsData(accounts);
+
+                    if (currentAccount.isResident())
+                    {
                         FXMLLoader loader = new FXMLLoader(getClass().getResource("/stages/residentMenu/resident_mailbox_stage.fxml"));
                         stage.setScene(new Scene(loader.load(), 1280, 720));
                         stage.getScene().getStylesheets().add(theme);
@@ -96,7 +108,10 @@ public class LoginController {
                         mailboxPage.setMails(mails);
                         mailboxPage.setCurrentAccount(currentAccount.toResident());
                         stage.show();
-                    } else if (currentAccount.isOfficer()) {
+                    }
+
+                    else if (currentAccount.isOfficer())
+                    {
                         FXMLLoader loader = new FXMLLoader(getClass().getResource("/stages/officerMenu/room_manage_stage.fxml"));
                         stage.setScene(new Scene(loader.load(), 1280, 720));
                         stage.getScene().getStylesheets().add(theme);
@@ -110,7 +125,10 @@ public class LoginController {
                         roomManagePage.setMailDataSource(mailDataSource);
                         roomManagePage.setCurrentAccount(currentAccount.toOfficer());
                         stage.show();
-                    } else if (currentAccount.isAdministrator()) {
+                    }
+
+                    else if (currentAccount.isAdministrator())
+                    {
                         FXMLLoader loader = new FXMLLoader(getClass().getResource("/stages/administratorMenu/administrator_stage.fxml"));
                         stage.setScene(new Scene(loader.load(), 1280, 720));
                         stage.getScene().getStylesheets().add(theme);
@@ -121,14 +139,21 @@ public class LoginController {
                         adminPage.setCurrentAccount(currentAccount.toAdministrator());
                         stage.show();
                     }
-                } else {
-                    if (currentAccount.isOfficer()) {
+                }
+
+                else
+                {
+                    if (currentAccount.isOfficer())
+                    {
                         currentAccount.toOfficer().addBannedLogin();
                         accountDataSource.setAccountsData(accounts);
                     }
                     errorAlert.setText("This account has been disabled.");
                 }
-            } catch (Exception e) {
+            }
+
+            catch (Exception e)
+            {
                 errorAlert.setText("The Username or Password is incorrect.");
             }
         }

@@ -112,7 +112,6 @@ public class AccountList {
     public Account login(String username, String password) {
         for (Account account : accounts) {
             if (account.validation(username, password)) {
-                account.setLastLogin(LocalDateTime.now());
                 return account;
             }
         }

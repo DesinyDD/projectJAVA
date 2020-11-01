@@ -8,6 +8,12 @@
 
 - **Recent Commit**
 
+    - fix bug lastLogin
+    
+    - แก้บัคล็อคอินไม่สำเร็จในขณะถูกแบน แต่ถูกบันทึกเวลาเข้าสู่ระบบ
+
+- [**37dd703**](https://bitbucket.org/6210402488/6210402488/commits/37dd703/)
+
     - update PDF file and add UML Class Diagram
     
     - ปรับปรุงแก้ไขไฟล์ PDF ให้สมบูรณ์
